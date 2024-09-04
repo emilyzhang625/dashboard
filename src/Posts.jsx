@@ -1,23 +1,22 @@
 import api from "./services/user";
 import { useEffect, useState } from "react";
+import "./Posts.css";
 
-function Posts({ id }) {
-  const [posts, setPosts] = useState([]);
-  useEffect(() => {
-    api.getPosts().then((res) => {
-      const all = res;
-      setPosts(all.filter((post) => post.userId === id));
-    });
-  }, []);
-
-  console.log(posts);
+function Posts({ user, posts }) {
+  const userPosts = posts.filter((post) => post.userId === user.id);
 
   return (
-    <div>
-      {posts.map((post) => (
+    <div className="posts-container">
+      <div className="sect-title">Activity</div>
+      {userPosts.map((post) => (
         <div key={post.id}>
-          <div>{post.title}</div>
-          <div>{post.body}</div>
+          <div className="box-container">
+            <div className="inline">
+              <div className="post-title">@{user.username}</div>
+              {post.title}
+            </div>
+            <div>{post.body}</div>
+          </div>
         </div>
       ))}
     </div>

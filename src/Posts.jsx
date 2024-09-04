@@ -1,5 +1,3 @@
-import api from "./services/user";
-import { useEffect, useState } from "react";
 import "./Posts.css";
 
 function Posts({ user, posts }) {

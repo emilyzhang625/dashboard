@@ -3,9 +3,11 @@ import Posts from "./Posts";
 import api from "./services/user";
 import { useState, useEffect } from "react";
 import "./App.css";
+import dashboardIcon from "./assets/dashboard.svg";
 
 function App() {
   const [id, setId] = useState(1);
+
   const [user, setUser] = useState({
     name: "",
     username: "",
@@ -16,11 +18,32 @@ function App() {
     address: {},
   });
   const [posts, setPosts] = useState([]);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    api.getUser(id).then((res) => setUser(res));
-    api.getPosts().then((res) => setPosts(res));
+    const fetchData = async () => {
+      try {
+        setLoading(true);
+        const temp = await api.getUser(id);
+        const ttemp = await api.getPosts();
+        setUser(temp);
+        setPosts(ttemp);
+      } catch (e) {
+        console.log(e);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchData();
   }, [id]);
+
+  if (loading)
+    return (
+      <div className="loading-container">
+        <img src={dashboardIcon} className="loader"></img>
+      </div>
+    );
 
   return (
     <div className="app-container">

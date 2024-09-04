@@ -1,5 +1,3 @@
-import { useState } from "react";
-import api from "./services/user";
 import "./Profile.css";
 import emailIcon from "./assets/email.svg";
 import phoneIcon from "./assets/call-phone.svg";

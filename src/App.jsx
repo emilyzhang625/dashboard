@@ -4,8 +4,8 @@ import Posts from "./Posts";
 function App() {
   return (
     <div>
-      <Profile />
-      <Posts />
+      <Profile id={1} />
+      <Posts id={1} />
     </div>
   );
 }

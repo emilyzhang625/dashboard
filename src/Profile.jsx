@@ -3,12 +3,19 @@ import emailIcon from "./assets/email.svg";
 import phoneIcon from "./assets/call-phone.svg";
 import websiteIcon from "./assets/website-with-text.svg";
 import homeIcon from "./assets/home.svg";
+import { useNavigate } from "react-router-dom";
 
-function Profile({ user, setId }) {
+function Profile({ user }) {
+  const navigate = useNavigate();
   const handleSwitch = (newId) => {
-    if (newId <= 10) setId(newId);
-    else setId(1);
+    if (newId <= 10) navigate(`/${newId}`);
+    else navigate("/1");
   };
+
+  const handleHome = () => {
+    navigate("/");
+  };
+
   return (
     <div className="user-container">
       <div className="sect-title">Profile</div>
@@ -38,6 +45,7 @@ function Profile({ user, setId }) {
       </div>
       <div className="center">
         <button onClick={() => handleSwitch(user.id + 1)}>Switch User</button>
+        <button onClick={handleHome}>Return Home</button>
       </div>
     </div>
   );

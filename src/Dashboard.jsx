@@ -4,10 +4,11 @@ import api from "./services/user";
 import { useState, useEffect } from "react";
 import "./Dashboard.css";
 import dashboardIcon from "./assets/dashboard.svg";
+import { useParams } from "react-router-dom";
 
 function Dashboard() {
-  const [id, setId] = useState(1);
-
+  const { id } = useParams();
+  console.log(id);
   const [user, setUser] = useState({
     name: "",
     username: "",
@@ -47,7 +48,7 @@ function Dashboard() {
 
   return (
     <div className="app-container">
-      <Profile user={user} className="user-side" setId={setId} />
+      <Profile user={user} className="user-side" />
       <Posts user={user} posts={posts} className="act-side" />
     </div>
   );

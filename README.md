@@ -1,4 +1,4 @@
 # Dashboard
-A minimalistic dashboard displaying user information and activity from third-party API. 
+A minimalistic dashboard displaying user information and activity from a third-party API. 
 
 **Live Demo:** [Dashboard](https://dashboard-tau-liard.vercel.app/)

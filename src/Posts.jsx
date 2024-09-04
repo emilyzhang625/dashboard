@@ -9,10 +9,11 @@ function Posts({ user, posts }) {
       {userPosts.map((post) => (
         <div key={post.id}>
           <div className="box-container">
-            <div className="inline">
+            <div className="inline-post">
               <div className="post-title">@{user.username}</div>
               {post.title}
             </div>
+            <div className="line"></div>
             <div>{post.body}</div>
           </div>
         </div>

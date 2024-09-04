@@ -1,7 +1,12 @@
-const API_URL = "https://jsonplaceholder.typicode.com/users/";
+const USER_URL = "https://jsonplaceholder.typicode.com/users/";
+const POST_URL = "https://jsonplaceholder.typicode.com/posts/";
 
 const getUser = (id) => {
-  return fetch(`${API_URL}${id}`).then((res) => res.json());
+  return fetch(`${USER_URL}${id}`).then((res) => res.json());
 };
 
-export default getUser;
+const getPosts = () => {
+  return fetch(POST_URL).then((res) => res.json());
+};
+
+export default { getUser, getPosts };

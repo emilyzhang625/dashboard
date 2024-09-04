@@ -1,6 +1,12 @@
 import Profile from "./Profile";
+import Posts from "./Posts";
 
 function App() {
-  return <Profile />;
+  return (
+    <div>
+      <Profile />
+      <Posts />
+    </div>
+  );
 }
 export default App;

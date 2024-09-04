@@ -1,9 +1,9 @@
-import getUser from "./services/user";
 import { useState } from "react";
+import api from "./services/user";
 
 function Profile() {
   const [name, setName] = useState("");
-  getUser(1).then((res) => setName(res.name));
+  api.getUser(1).then((res) => setName(res.name));
 
   return <div>{name}</div>;
 }

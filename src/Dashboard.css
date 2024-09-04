@@ -27,10 +27,7 @@ body {
 	padding-left: 3px;
 }
 
-.user-side {
-	/* width: 300px; */
-	flex-shrink: 0;
-}
+
 
 .loading-container{
 	display: flex;

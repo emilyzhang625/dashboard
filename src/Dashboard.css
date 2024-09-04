@@ -28,9 +28,13 @@ body {
 	height: 100vh; /* Full viewport height */
   	width: 100vw;  /* Full viewport width */
 	flex-direction: column;
+	position: relative
 }
 
 .loader {
 	width: 15vw;
 	height: 15vh;
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%); /* Center vertically */
 }
